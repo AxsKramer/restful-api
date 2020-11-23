@@ -11,6 +11,8 @@ mongoose.connect('mongodb://localhost:27017/wikiDB', {
   useFindAndModify: false
 })
 
+app.use(express.urlencoded({extended: true}));
+
 app.use('/', router);
 
 app.listen(port, () => console.log('Server is runing in port: ', port));
